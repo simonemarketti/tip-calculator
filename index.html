@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+    <title>Spli-tter</title>
+
+    <!-- Fontawesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/d9effc3b08.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Jquery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body
+    class="is-flex-desktop is-justify-content-center is-align-items-center is-align-content-center"
+  >
+    <!-- Cover container -->
+    <div
+      class="main-container container has-background-primary is-flex-desktop is-justify-content-center is-align-items-center is-flex-direction-column"
+    >
+      <!-- Intro -->
+      <div class="has-text-centered py-3">
+        <img src="./images/logo.svg" alt="logo" />
+      </div>
+      <!-- App container -->
+      <div
+        class="container is-max-desktop is-flex-desktop is-justify-content-center is-align-items-stretch is-flex-direction-row has-background-white px-4 is-family-primary"
+      >
+        <!-- Input -->
+        <div class="column is-half-desktop has-text-green-primary">
+          <!-- Bill Section -->
+          <section class="py-3">
+            <h4 class="py-2">Bill</h4>
+            <div class="control has-icons-left">
+              <input
+                class="input is-medium has-text-right input-bill"
+                type="number"
+                placeholder="0"
+                name="billinput"
+                maxlength="3"
+                oninput="this.value=this.value.slice(0,this.maxLength)"
+              />
+              <span class="icon is-medium is-left">
+                <img src="./images/icon-dollar.svg" alt="dollar" />
+              </span>
+            </div>
+          </section>
+          <!-- Tip Section -->
+          <section class="py-3">
+            <h4 class="py-2">Select Tip %</h4>
+            <div
+              class="columns is-centered is-multiline is-mobile is-vcentered has-text-white"
+            >
+              <div class="column is-half">
+                <button
+                  class="button is-green-primary is-large is-fullwidth button-tip"
+                >
+                  5%
+                </button>
+              </div>
+              <div class="column is-half">
+                <button
+                  class="button is-green-primary is-large is-fullwidth button-tip"
+                >
+                  10%
+                </button>
+              </div>
+              <div class="column is-half">
+                <button
+                  class="button is-green-primary is-large is-fullwidth button-tip is-active button-active"
+                  autofocus
+                >
+                  15%
+                </button>
+              </div>
+              <div class="column is-half">
+                <button
+                  class="button is-green-primary is-large is-fullwidth button-tip"
+                >
+                  25%
+                </button>
+              </div>
+              <div class="column is-half">
+                <button
+                  class="button is-green-primary is-large is-fullwidth button-tip"
+                >
+                  50%
+                </button>
+              </div>
+              <div class="column is-half">
+                <input
+                  class="input is-large has-text-right is-fullwidth input-custom"
+                  type="number"
+                  placeholder="Custom"
+                  maxlength="2"
+                  oninput="this.value=this.value.slice(0,this.maxLength)"
+                />
+              </div>
+            </div>
+          </section>
+          <!-- People Section -->
+          <section class="py-3">
+            <div class="columns mb-2 is-mobile is-gapless">
+              <h4 class="column">Number of people</h4>
+              <p
+                class="column has-text-right has-text-danger is-invisible error-message"
+              >
+                Can't be zero
+              </p>
+            </div>
+            <div class="control has-icons-left">
+              <input
+                class="input is-medium has-text-right input-people"
+                type="number"
+                placeholder="0"
+                maxlength="2"
+                oninput="this.value=this.value.slice(0,this.maxLength)"
+              />
+              <span class="icon is-medium is-left">
+                <img src="./images/icon-person.svg" alt="person" />
+              </span>
+            </div>
+          </section>
+        </div>
+        <!-- Output -->
+        <div
+          class="box column is-flex-desktop is-flex-direction-column is-justify-content-space-around is-half-desktop my-3 has-text-white has-background-green-primary"
+        >
+          <div class="columns is-mobile is-multiline is-centered is-vcentered">
+            <div class="column">
+              <h4 class="has-text-weight-bold is-size-5">Tip amount</h4>
+              <p class="person">/ person</p>
+            </div>
+            <div class="column has-text-right has-text-primary">
+              <p class="is-size-4 is-size-2-desktop">
+                $
+                <span class="is-size-4 is-size-2-desktop output-tip">0.00</span>
+              </p>
+            </div>
+          </div>
+          <div class="columns is-mobile is-multiline is-centered is-vcentered">
+            <div class="column">
+              <h4 class="has-text-weight-bold is-size-5">Total</h4>
+              <p class="person">/ person</p>
+            </div>
+            <div class="column has-text-right has-text-primary">
+              <p class="is-size-4 is-size-2-desktop">
+                $
+                <span class="is-size-4 is-size-2-desktop output-total"
+                  >0.00</span
+                >
+              </p>
+            </div>
+          </div>
+          <button
+            class="button is-medium is-fullwidth is-green-primary is-inverted is-uppercase reset-button"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

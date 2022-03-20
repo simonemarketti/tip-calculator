@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+/* Custom colors */
+$strong-cyan: hsl(185, 41%, 84%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+/* Custom Fonts */
+$family-primary: "Space Mono";
+
+/* Map colors */
+$primary: $strong-cyan;
+$custom-colors: (
+  "green-primary": $very-dark-cyan,
+  "dark-grayish-cyan": $dark-grayish-cyan,
+  "grayish-cyan": $grayish-cyan,
+  "light-grayish-cyan": $light-grayish-cyan,
+  "very-light-grayish-cyan": $very-light-grayish-cyan,
+);
+
+/* Import Bulma */
+@import "../node_modules/bulma/bulma.sass";
+
+/* Universal styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Tip Section */
+.button {
+  &.is-green-primary {
+    &:hover {
+      background-color: $strong-cyan;
+      color: $very-dark-cyan;
+    }
+    &.is-active {
+      background-color: $grayish-cyan;
+      color: $very-dark-cyan;
+      &:active {
+        background-color: $grayish-cyan;
+        color: $very-dark-cyan;
+      }
+    }
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Output */
+.button.is-green-primary.is-inverted {
+  &:hover {
+    background-color: $strong-cyan;
+  }
+  &:active {
+    background-color: $strong-cyan;
+  }
+}
+.person {
+  opacity: 50%;
+}
+
+/* Desktop styles */
+@media screen and (min-width: $desktop) {
+  body {
+    height: 100vh;
+  }
+  .main-container {
+    padding: 3% 0;
+  }
+}
