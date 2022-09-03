@@ -12,6 +12,7 @@ $(".input-bill").on("keyup", function () {
   bill = parseInt($(this).val()) || 0;
   calculate();
 });
+
 /* Tip section */
 
 $(".button-tip").each(function () {
@@ -36,6 +37,7 @@ $(".input-custom").on("keyup", function () {
   tip = parseInt($(this).val()) / 100 || 0;
   calculate();
 });
+
 /* People section */
 
 $(".input-people").on("keyup", function () {
@@ -71,13 +73,14 @@ $(".reset-button").on("click", function () {
   $(".input-people").removeClass("is-danger");
   $(".error-message").addClass("is-invisible");
 });
+
 /* Functions */
 
 var calculate = function calculate() {
   total = parseFloat(bill / people).toFixed(2);
   tipAmount = parseFloat(bill / people * tip).toFixed(2);
 
-  if (people != 0 && bill != 0) {
+  if (people !== 0 && bill !== 0) {
     $(".output-total").text(total);
     $(".output-tip").text(tipAmount);
   } else {
